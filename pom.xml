@@ -80,7 +80,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>eu.andreatt.proyecto1_dein.HelloApplication</mainClass>
+                            <mainClass>eu.andreatt.proyecto1_dein.controllers.MenuPrincipalController</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

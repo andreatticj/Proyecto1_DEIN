@@ -10,9 +10,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<GridPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.proyecto1_dein.controllers.MenuPrincipalController">
+<!--<?import org.kordamp.ikonli.javafx.FontIcon?>-->
+
+<GridPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.proyecto1_dein.controllers.MenuPrincipalController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -20,7 +21,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <GridPane prefHeight="736.0" prefWidth="957.0" style="-fx-background-color: lightgray;">
+      <GridPane style="-fx-background-color: lightgray;">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -234,96 +235,24 @@
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </TextField>
-            <Button fx:id="botonAgregarDeporte" mnemonicParsing="false" onAction="#actionAgregarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarDeporte" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonAgregarDeportista" mnemonicParsing="false" onAction="#actionAgregarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarDeportista" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonAgregarEquipo" mnemonicParsing="false" onAction="#actionAgregarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarEquipo" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonAgregarOlimpiada" mnemonicParsing="false" onAction="#actionAgregarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarOlimpiada" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonAgregarEvento" mnemonicParsing="false" onAction="#actionAgregarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarEvento" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonAgregarParticipacion" mnemonicParsing="false" onAction="#actionAgregarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarParticipacion" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-plus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarDeporte" mnemonicParsing="false" onAction="#actionEditarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarDeporte" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarDeportista" mnemonicParsing="false" onAction="#actionEditarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarDeportista" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarEquipo" mnemonicParsing="false" onAction="#actionEditarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarEquipo" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarOlimpiada" mnemonicParsing="false" onAction="#actionEditarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarOlimpiada" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarEvento" mnemonicParsing="false" onAction="#actionEditarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarEvento" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonEditarParticipacion" mnemonicParsing="false" onAction="#actionEditarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarParticipacion" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-pen" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarDeporte" mnemonicParsing="false" onAction="#actionBorrarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarDeporte" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarDeportista" mnemonicParsing="false" onAction="#actionBorrarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarDeportista" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarEquipo" mnemonicParsing="false" onAction="#actionBorrarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarEquipo" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarOlimpiada" mnemonicParsing="false" onAction="#actionBorrarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarOlimpiada" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarEvento" mnemonicParsing="false" onAction="#actionBorrarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarEvento" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
-            <Button fx:id="botonBorrarParticipacion" mnemonicParsing="false" onAction="#actionBorrarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarParticipacion" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-               <graphic>
-                  <FontIcon iconLiteral="fas-minus" />
-               </graphic>
-            </Button>
+            <Button fx:id="botonAgregarDeporte" mnemonicParsing="false" onAction="#actionAgregarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarDeporte" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonAgregarDeportista" mnemonicParsing="false" onAction="#actionAgregarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarDeportista" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonAgregarEquipo" mnemonicParsing="false" onAction="#actionAgregarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarEquipo" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonAgregarOlimpiada" mnemonicParsing="false" onAction="#actionAgregarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarOlimpiada" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonAgregarEvento" mnemonicParsing="false" onAction="#actionAgregarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarEvento" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonAgregarParticipacion" mnemonicParsing="false" onAction="#actionAgregarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonAgregar" stylesheets="@../css/application.css" text="%botonAgregarParticipacion" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarDeporte" mnemonicParsing="false" onAction="#actionEditarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarDeporte" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarDeportista" mnemonicParsing="false" onAction="#actionEditarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarDeportista" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarEquipo" mnemonicParsing="false" onAction="#actionEditarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarEquipo" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarOlimpiada" mnemonicParsing="false" onAction="#actionEditarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarOlimpiada" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarEvento" mnemonicParsing="false" onAction="#actionEditarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarEvento" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonEditarParticipacion" mnemonicParsing="false" onAction="#actionEditarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonEditar" stylesheets="@../css/application.css" text="%botonEditarParticipacion" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarDeporte" mnemonicParsing="false" onAction="#actionBorrarDeporte" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarDeporte" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarDeportista" mnemonicParsing="false" onAction="#actionBorrarDeportista" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarDeportista" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarEquipo" mnemonicParsing="false" onAction="#actionBorrarEquipo" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarEquipo" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarOlimpiada" mnemonicParsing="false" onAction="#actionBorrarOlimpiada" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarOlimpiada" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarEvento" mnemonicParsing="false" onAction="#actionBorrarEvento" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarEvento" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="botonBorrarParticipacion" mnemonicParsing="false" onAction="#actionBorrarParticipacion" prefHeight="40.0" prefWidth="210.0" styleClass="botonBorrar" stylesheets="@../css/application.css" text="%botonBorrarParticipacion" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>
