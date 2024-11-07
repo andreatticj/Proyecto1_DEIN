@@ -10,7 +10,6 @@ import java.util.TimeZone;
 
 /**
  * Clase que gestiona la conexión con la base de datos.
- * Utiliza las propiedades de conexión definidas en la clase {@link Propiedades}.
  */
 public class ConexionBD {
 
@@ -19,10 +18,6 @@ public class ConexionBD {
 
     /**
      * Constructor que establece una conexión con la base de datos.
-     * Obtiene los parámetros de conexión (URL, usuario y contraseña) de la clase {@link Propiedades}.
-     * La zona horaria del servidor se configura según la zona horaria del sistema.
-     *
-     * @throws SQLException Si ocurre un error al establecer la conexión con la base de datos.
      */
     public ConexionBD() throws SQLException {
         String url = Propiedades.getValor("url") + "?serverTimezone=" + TimeZone.getDefault().getID();
@@ -36,8 +31,6 @@ public class ConexionBD {
 
     /**
      * Obtiene la conexión actual con la base de datos.
-     *
-     * @return La conexión activa de tipo {@link Connection}.
      */
     public Connection getConexion() {
         return conexion;
@@ -45,8 +38,6 @@ public class ConexionBD {
 
     /**
      * Cierra la conexión con la base de datos.
-     *
-     * @throws SQLException Si ocurre un error al cerrar la conexión.
      */
     public void closeConnection() throws SQLException {
         conexion.close();

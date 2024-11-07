@@ -1,39 +1,47 @@
 package eu.andreatt.proyecto1_dein.application;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import eu.andreatt.proyecto1_dein.utils.Propiedades;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
+import javafx.fxml.FXMLLoader;
 
-import java.io.IOException;
 
-public class MenuPrincipal extends Application {
-    /**
-     * Metodo de inicio de la aplicación JavaFX.
-     * Carga el archivo FXML para la interfaz de inicio de sesión, establece el título de la ventana
-     * y la muestra.
-     *
-     * @param stage La ventana principal de la aplicación.
-     * @throws IOException Si ocurre un error al cargar el archivo FXML.
-     */
+public class MenuPrincipal extends Application{
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MenuPrincipal.class.getResource("/eu/andreatt/ejerciciol_dein/fxml/eu.andreatt.proyecto1_dein.application.MenuPrincipal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    public void start(Stage primaryStage) {
+        try {
+            //Multilingue
+            String idioma = Propiedades.getValor("idioma");
+            String region = Propiedades.getValor("region");
+            Locale.setDefault(new Locale(idioma, region));
+            ResourceBundle bundle = ResourceBundle.getBundle("/eu/andreatt/proyecto1_dein/idiomas/messages");
 
-        // Configuración de la ventana
-        stage.setTitle("OLIMPIADAS");
-        stage.setScene(scene);
-        stage.show();
+            //Logo
+            Image icon = new Image(getClass().getResourceAsStream("/eu/andreatt/proyecto1_dein/images/antorcha.png"));
+            primaryStage.getIcons().add(icon);
+
+            //Escena principal
+            GridPane root = (GridPane)FXMLLoader.load(getClass().getResource("/eu/andreatt/proyecto1_dein/fxml/MenuPrincipal.fxml"),bundle);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/eu/andreatt/proyecto1_dein/css/application.css").toExternalForm());
+
+            //Primary Stage
+            primaryStage.setTitle(bundle.getString("tituloPrincipal"));
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    /**
-     * Metodo principal de la aplicación.
-     * Lanza la aplicación JavaFX.
-     *
-     * @param args Argumentos de la línea de comandos (no se utilizan en este caso).
-     */
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

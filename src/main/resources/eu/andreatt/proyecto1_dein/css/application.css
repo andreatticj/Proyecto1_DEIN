@@ -10,7 +10,6 @@
 }
 
 .botonMenu:hover {
-    -fx-font-size: 140%;
     -fx-font-weight: bold;
 }
 
@@ -18,7 +17,6 @@
 .botonAgregar, .botonEditar, .botonBorrar, .botonGuardar, .botonCancelar{
 	-fx-font-size: 12pt;
 	-fx-text-fill:white;
-	-fx-background-radius:8pt;
 }
 
 /* Estilos boton Agregar, Guardar */
@@ -26,42 +24,29 @@
     -fx-background-color: #186902;
 }
 
-.botonAgregar:hover, .botonGuardar:hover {
-    -fx-background-color: lime;
-    -fx-text-fill:black;
-    -fx-font-weight:bold;
-}
+
 
 /* Estilos boton Editar */
 .botonEditar {
-    -fx-background-color: #096197;
+    -fx-background-color: yellow;
+    -fx-text-fill:black;
 }
 
-.botonEditar:hover {
-    -fx-background-color: #139FF4;
-    -fx-text-fill:black;
-    -fx-font-weight:bold;
-}
 
 /* Estilos boton Borrar, Cancelar */
 .botonBorrar, .botonCancelar {
     -fx-background-color: #A90B25;
 }
 
-.botonBorrar:hover, .botonCancelar:hover {
-    -fx-background-color: #F41338;
-    -fx-text-fill:black;
-    -fx-font-weight:bold;
-}
 
 /* Tablas y Filas */
 .table-view {
-    -fx-background-color: #908300; 
+    -fx-background-color: #908300;
     -fx-control-inner-background: transparent;
 }
 
 .table-row-cell {
-    -fx-background-color: #FFE800;
+    -fx-background-color:  #f5cba7;
 }
 
 .table-view .column-header {

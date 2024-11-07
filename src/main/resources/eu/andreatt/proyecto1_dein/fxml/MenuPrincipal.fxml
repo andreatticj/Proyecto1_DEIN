@@ -11,9 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<!--<?import org.kordamp.ikonli.javafx.FontIcon?>-->
-
-<GridPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.proyecto1_dein.controllers.MenuPrincipalController">
+<GridPane xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.proyecto1_dein.controllers.MenuPrincipalController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -43,7 +41,7 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
                <children>
-                  <Button fx:id="botonDeportista" mnemonicParsing="false" onAction="#actionBotonDeportista" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%deportista" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonDeportista" mnemonicParsing="false" onAction="#actionBotonDeportista" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%deportista" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -64,7 +62,7 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <Button fx:id="botonOlimpiada" mnemonicParsing="false" onAction="#actionBotonOlimpiada" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%olimpiada" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonOlimpiada" mnemonicParsing="false" onAction="#actionBotonOlimpiada" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%olimpiada" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -82,7 +80,7 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <Button fx:id="botonEquipo" mnemonicParsing="false" onAction="#actionBotonEquipo" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%equipo" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonEquipo" mnemonicParsing="false" onAction="#actionBotonEquipo" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%equipo" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -100,7 +98,7 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <Button fx:id="botonDeporte" mnemonicParsing="false" onAction="#actionBotonDeporte" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%deporte" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonDeporte" mnemonicParsing="false" onAction="#actionBotonDeporte" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%deporte" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -118,7 +116,7 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <Button fx:id="botonEvento" mnemonicParsing="false" onAction="#actionBotonEvento" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%evento" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonEvento" mnemonicParsing="false" onAction="#actionBotonEvento" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%evento" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
@@ -136,7 +134,7 @@
                   <RowConstraints />
                </rowConstraints>
                <children>
-                  <Button fx:id="botonParticipacion" mnemonicParsing="false" onAction="#actionBotonParticipacion" prefHeight="80.0" prefWidth="135.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%participacion" textAlignment="CENTER" GridPane.halignment="CENTER">
+                  <Button fx:id="botonParticipacion" mnemonicParsing="false" onAction="#actionBotonParticipacion" prefHeight="80.0" prefWidth="150.0" styleClass="botonMenu" stylesheets="@../css/application.css" text="%participacion" textAlignment="CENTER" GridPane.halignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>

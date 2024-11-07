@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="283.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.andreatt.proyecto1_dein.controllers.AgregarOlimpiadaController">
   <columnConstraints>
@@ -63,14 +62,8 @@
          </GridPane.margin>
       </TextField>
       <Button fx:id="botonGuardar" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#actionGuardar" prefHeight="50.0" prefWidth="130.0" styleClass="botonGuardar" stylesheets="@../css/application.css" text="%botonGuardar" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-         <graphic>
-            <FontIcon iconLiteral="fas-save" />
-         </graphic>
       </Button>
       <Button fx:id="botonCancelar" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onAction="#actionCancelar" prefHeight="50.0" prefWidth="130.0" styleClass="botonCancelar" stylesheets="@../css/application.css" text="%botonCancelar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-         <graphic>
-            <FontIcon iconLiteral="fas-save" />
-         </graphic>
       </Button>
    </children>
 </GridPane>
