@@ -64,7 +64,7 @@ El proyecto utiliza JavaFX para crear una interfaz gráfica de usuario intuitiva
     Asegúrate de tener instalada y configurada una base de datos compatible (SQLite o MySQL).
     Ejecuta el script sql/olimpiadas.sql para crear las tablas necesarias.
 
-### Compila y ejecuta el proyecto:
+### Compila y ejecuta el proyecto: 
 
     Abre el proyecto en tu IDE favorito (IntelliJ IDEA recomendado).
     Asegúrate de tener las dependencias de JavaFX configuradas correctamente.
