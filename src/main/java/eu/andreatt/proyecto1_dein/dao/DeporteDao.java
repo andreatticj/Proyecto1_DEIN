@@ -18,7 +18,7 @@ public class DeporteDao {
         ObservableList<Deporte> deporte = FXCollections.observableArrayList();
         try {
             conexion = new ConexionBD();
-            String consulta = "SELECT * FROM deporte";
+            String consulta = "SELECT * FROM Deporte";
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             ResultSet rs = pstmt.executeQuery();
 
@@ -43,7 +43,7 @@ public class DeporteDao {
         ObservableList<String> nombre = FXCollections.observableArrayList();
         try {
             conexion = new ConexionBD();
-            String consulta = "SELECT DISTINCT nombre as nombre FROM deporte;";
+            String consulta = "SELECT DISTINCT nombre as nombre FROM Deporte;";
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             ResultSet rs = pstmt.executeQuery();
 
@@ -63,7 +63,7 @@ public class DeporteDao {
     public boolean insertarDeporte(int id_deporte, String nombre) {
         try {
             conexion = new ConexionBD();
-            String consulta = "INSERT INTO deporte (id_deporte, nombre) VALUES (?, ?)";
+            String consulta = "INSERT INTO Deporte (id_deporte, nombre) VALUES (?, ?)";
 
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             pstmt.setInt(1, id_deporte);
@@ -83,7 +83,7 @@ public class DeporteDao {
     public boolean borrarDeporte(int id_deporte) {
         try {
             conexion = new ConexionBD();
-            String consulta = "DELETE FROM deporte WHERE id_deporte = ?";
+            String consulta = "DELETE FROM Deporte WHERE id_deporte = ?";
 
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             pstmt.setInt(1, id_deporte);
@@ -102,7 +102,7 @@ public class DeporteDao {
     public boolean actualizarDeporte(int id_deporte, String nombre) {
         try {
             conexion = new ConexionBD();
-            String consulta = "UPDATE deporte SET nombre = ? WHERE id_deporte = ?";
+            String consulta = "UPDATE Deporte SET nombre = ? WHERE id_deporte = ?";
 
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             pstmt.setString(1, nombre);
@@ -122,7 +122,7 @@ public class DeporteDao {
     public int dameMaxIdDeportes() {
         try {
             conexion = new ConexionBD();
-            String consulta = "SELECT MAX(id_deporte) AS max_id FROM deporte";
+            String consulta = "SELECT MAX(id_deporte) AS max_id FROM Deporte";
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 
             ResultSet rs = pstmt.executeQuery();
@@ -143,7 +143,7 @@ public class DeporteDao {
     public int dameIdDeDeporte(String nombre) {
         try {
             conexion = new ConexionBD();
-            String consulta = "SELECT id_deporte FROM deporte WHERE nombre = ?";
+            String consulta = "SELECT id_deporte FROM Deporte WHERE nombre = ?";
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
             pstmt.setString(1, nombre);
 
@@ -166,7 +166,7 @@ public class DeporteDao {
     public boolean existeDeporte(String nombre) {
         try {
             conexion = new ConexionBD();
-            String consulta = "SELECT * FROM deporte WHERE nombre = ?";
+            String consulta = "SELECT * FROM Deporte WHERE nombre = ?";
             PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 
             pstmt.setString(1, nombre);

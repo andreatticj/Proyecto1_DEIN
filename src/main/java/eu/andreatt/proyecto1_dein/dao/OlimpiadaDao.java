@@ -18,7 +18,7 @@ public class OlimpiadaDao {
 		ObservableList<Olimpiada> equipo = FXCollections.observableArrayList();
 		try {
 			conexion = new ConexionBD();
-			String consulta = "SELECT * FROM olimpiada";
+			String consulta = "SELECT * FROM Olimpiada";
 			PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 			ResultSet rs = pstmt.executeQuery();
 
@@ -44,7 +44,7 @@ public class OlimpiadaDao {
 	public boolean insertarOlimpiada(String nombre, int anio, String temporada, String ciudad) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "INSERT INTO olimpiada (nombre, anio, temporada, ciudad) VALUES (?, ?, ?, ?)";
+			String consulta = "INSERT INTO Olimpiada (nombre, anio, temporada, ciudad) VALUES (?, ?, ?, ?)";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -66,7 +66,7 @@ public class OlimpiadaDao {
 	public boolean borrarOlimpiada(int id_olimpiada) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "DELETE FROM olimpiada WHERE id_olimpiada = ?";
+			String consulta = "DELETE FROM Olimpiada WHERE id_olimpiada = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setInt(1, id_olimpiada);
@@ -85,7 +85,7 @@ public class OlimpiadaDao {
 	public boolean actualizarOlimpiada(int id_olimpiada, String nombre, int anio, String temporada, String ciudad) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "UPDATE olimpiada SET nombre = ?, anio = ?, temporada = ?, ciudad = ? WHERE id_olimpiada = ?";
+			String consulta = "UPDATE Olimpiada SET nombre = ?, anio = ?, temporada = ?, ciudad = ? WHERE id_olimpiada = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -108,7 +108,7 @@ public class OlimpiadaDao {
 	public int dameIdDeOlimpiada(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT id_olimpiada FROM olimpiada WHERE nombre = ?";
+	        String consulta = "SELECT id_olimpiada FROM Olimpiada WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
 
@@ -130,7 +130,7 @@ public class OlimpiadaDao {
 	public boolean existeOlimpiada(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT * FROM olimpiada WHERE nombre = ?";
+	        String consulta = "SELECT * FROM Olimpiada WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 
 	        pstmt.setString(1, nombre);

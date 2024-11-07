@@ -18,7 +18,7 @@ public class EquipoDao {
 		ObservableList<Equipo> equipo = FXCollections.observableArrayList();
 		try {
 			conexion = new ConexionBD();
-			String consulta = "SELECT * FROM equipo";
+			String consulta = "SELECT * FROM Equipo";
 			PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 			ResultSet rs = pstmt.executeQuery();
 
@@ -42,7 +42,7 @@ public class EquipoDao {
 	public boolean insertarEquipo(String nombre, String iniciales) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "INSERT INTO equipo (nombre, iniciales) VALUES (?, ?)";
+			String consulta = "INSERT INTO Equipo (nombre, iniciales) VALUES (?, ?)";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -62,7 +62,7 @@ public class EquipoDao {
 	public boolean borrarEquipo(int id_equipo) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "DELETE FROM equipo WHERE id_equipo = ?";
+			String consulta = "DELETE FROM Equipo WHERE id_equipo = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setInt(1, id_equipo);
@@ -81,7 +81,7 @@ public class EquipoDao {
 	public boolean actualizarEquipo(int id_equipo, String nombre, String iniciales) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "UPDATE equipo SET nombre = ?, iniciales = ? WHERE id_equipo = ?";
+			String consulta = "UPDATE Equipo SET nombre = ?, iniciales = ? WHERE id_equipo = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -102,7 +102,7 @@ public class EquipoDao {
 	public int dameIdDeEquipo(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT id_equipo FROM equipo WHERE nombre = ?";
+	        String consulta = "SELECT id_equipo FROM Equipo WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
 
@@ -124,7 +124,7 @@ public class EquipoDao {
 	public boolean existeEquipo(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT * FROM equipo WHERE nombre = ?";
+	        String consulta = "SELECT * FROM Equipo WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 
 	        pstmt.setString(1, nombre);

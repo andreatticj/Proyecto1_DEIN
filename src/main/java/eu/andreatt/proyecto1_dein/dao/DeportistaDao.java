@@ -19,7 +19,7 @@ public class DeportistaDao {
 		ObservableList<Deportista> deportista = FXCollections.observableArrayList();
 		try {
 			conexion = new ConexionBD();
-			String consulta = "SELECT id_deportista, nombre, sexo, peso, altura FROM deportista";
+			String consulta = "SELECT id_deportista, nombre, sexo, peso, altura FROM Deportista";
 			PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 			ResultSet rs = pstmt.executeQuery();
 
@@ -47,7 +47,7 @@ public class DeportistaDao {
 		ObservableList<Deportista> deportista = FXCollections.observableArrayList();
 		try {
 			conexion = new ConexionBD();
-			String consulta = "SELECT * FROM deportista";
+			String consulta = "SELECT * FROM Deportista";
 			PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 			ResultSet rs = pstmt.executeQuery();
 
@@ -74,7 +74,7 @@ public class DeportistaDao {
 	public boolean insertarDeportista(String nombre, String sexo, int peso, int altura) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "INSERT INTO deportista (nombre, sexo, peso, altura) VALUES (?, ?, ?, ?)";
+			String consulta = "INSERT INTO Deportista (nombre, sexo, peso, altura) VALUES (?, ?, ?, ?)";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -96,7 +96,7 @@ public class DeportistaDao {
 	public boolean borrarDeportista(int id_deportista) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "DELETE FROM deportista WHERE id_deportista = ?";
+			String consulta = "DELETE FROM Deportista WHERE id_deportista = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setInt(1, id_deportista);
@@ -115,7 +115,7 @@ public class DeportistaDao {
 	public boolean actualizarDeportista(int id_deportista, String nombre, String sexo, int peso, int altura) {
 		try {
 			conexion = new ConexionBD();       
-			String consulta = "UPDATE deportista SET nombre = ?, sexo = ?, peso = ?, altura = ? WHERE id_deportista = ?";
+			String consulta = "UPDATE Deportista SET nombre = ?, sexo = ?, peso = ?, altura = ? WHERE id_deportista = ?";
 	
 	    	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
@@ -138,7 +138,7 @@ public class DeportistaDao {
 	public int dameIdDeDeportista(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT id_deportista FROM deportista WHERE nombre = ?";
+	        String consulta = "SELECT id_deportista FROM Deportista WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 	        pstmt.setString(1, nombre);
 
@@ -160,7 +160,7 @@ public class DeportistaDao {
 	public boolean existeDeportista(String nombre) {
 	    try {
 	        conexion = new ConexionBD();
-	        String consulta = "SELECT * FROM deportista WHERE nombre = ?";
+	        String consulta = "SELECT * FROM Deportista WHERE nombre = ?";
 	        PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);
 
 	        pstmt.setString(1, nombre);
