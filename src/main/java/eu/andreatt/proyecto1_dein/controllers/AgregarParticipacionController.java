@@ -110,10 +110,12 @@ public class AgregarParticipacionController implements Initializable{
     /** EVENTO - AL PULSAR GUARDAR */
     @FXML
     void actionGuardar(ActionEvent event) {
+        String errores = validarDatos();
+        if (!errores.isEmpty()){
         String deportistaNombre = comboDeportistas.getSelectionModel().getSelectedItem().getNombre();
         String eventoNombre = comboEventos.getSelectionModel().getSelectedItem().getNombre();
         String equipoNombre = comboEquipos.getSelectionModel().getSelectedItem().getNombre();
-        int edad = Integer.parseInt(textFieldEdad.getText());
+        String edad = textFieldEdad.getText();
         String medalla = comboMedallas.getSelectionModel().getSelectedItem();
 
         // Validar que la edad sea un número
@@ -127,33 +129,52 @@ public class AgregarParticipacionController implements Initializable{
             if (guardando) {
                 // Actualizar la participación existente con los IDs correctos
                 participacionesExistentes.set(participacionesExistentes.indexOf(this.participacion),
-                        new InformacionParticipacion(deportistaNombre, eventoNombre, equipoNombre, edad, medalla));
-
-                // Aquí puedes hacer lo que necesites con la base de datos si quieres actualizarla.
-                // Por ejemplo, actualizar los datos de la participación en la base de datos
+                        new InformacionParticipacion(deportistaNombre, eventoNombre, equipoNombre, Integer.parseInt(edad), medalla));
 
                 // Mensaje de alerta
                 generarVentana(AlertType.INFORMATION, bundle.getString("editarParticipacionCorrecto"), "INFO");
             } else {
                 // Añadir nueva participación a la lista y base de datos
-                participacionesExistentes.add(new InformacionParticipacion(deportistaNombre, eventoNombre, equipoNombre, edad, medalla));
-                new ParticipacionDao().insertarParticipacion(deportistaId, eventoId, equipoId, edad, medalla);
+                participacionesExistentes.add(new InformacionParticipacion(deportistaNombre, eventoNombre, equipoNombre, Integer.parseInt(edad), medalla));
+                new ParticipacionDao().insertarParticipacion(deportistaId, eventoId, equipoId, Integer.parseInt(edad), medalla);
 
                 // Mensaje de alerta
                 generarVentana(AlertType.INFORMATION, bundle.getString("agregarParticipacionCorrecto"), "INFO");
             }
 
-            // Cerrar la ventana modal si todo está correcto
+            // Cerrar la ventana modal si todo esta correcto
             Stage stage = (Stage) botonCancelar.getScene().getWindow();
             stage.close();
         } else {
             generarVentana(AlertType.INFORMATION, bundle.getString("errorNumero") + " " + bundle.getString("labelEdad"), "INFO");
         }
     }
+}
 
-    /** VALIDAR SI ES UN NUMERO */
+/** VALIDAR DATOS INTRODUCIDOS */
+private String validarDatos() {
+    String errores = "";
+
+    // Validar edad (número positivo)
+    if (textFieldEdad.getText().isEmpty()) {
+        errores += bundle.getString("errorTexto") + " " + bundle.getString("labelEdad") + "\n";
+    } else if (!esNumeroEntero(textFieldEdad.getText())) {
+        errores += bundle.getString("errorNumeroPositivo") + " " + bundle.getString("labelEdad") + "\n";
+    }
+    return errores;
+}
+
+/** VALIDAR SI ES UN NUMERO */
     private static boolean esNumeroEntero(String valor) {
-        return valor.matches("-?\\d+");
+        try {
+            int num = Integer.parseInt(valor);
+            if (num <= 0){
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
     /** GENERAR VENTANA DE ALERTA */

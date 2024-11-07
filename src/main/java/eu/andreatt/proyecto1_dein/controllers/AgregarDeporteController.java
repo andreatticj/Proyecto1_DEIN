@@ -65,6 +65,8 @@ public class AgregarDeporteController implements Initializable{
     /** EVENTO - AL PULSAR GUARDAR */
     @FXML
     void actionGuardar(ActionEvent event) {
+        String errores= validarDatos();
+        if (!errores.isEmpty()){
         String deporte = textFieldNombre.getText().trim();
 
         //Comprobar si existe deporte
@@ -95,9 +97,21 @@ public class AgregarDeporteController implements Initializable{
                 Stage stage = (Stage) botonCancelar.getScene().getWindow();
                 stage.close();
             }
-        }
+        }else {
+            generarVentana(AlertType.ERROR, validarDatos(),"ERROR");
+        }}
     }
 
+    /** VALIDAR DATOS INTRODUCIDOS */
+    private String validarDatos() {
+        String errores = "";
+
+        //Validar temporada
+        if(textFieldNombre.getText().isEmpty()) {
+            errores+=bundle.getString("errorTexto")+" "+bundle.getString("labelNombre")+"\n";
+        }
+        return errores;
+    }
     /** GENERAR VENTANA DE ALERTA */
     private void generarVentana(AlertType tipoDeAlerta, String mensaje, String title) {
         Alert alerta = new Alert(tipoDeAlerta);

@@ -113,30 +113,30 @@ public class AgregarEquipoController implements Initializable {
         }
     }
 
-    /** VALIDACIÓN DE DATOS */
+    /** VALIDAR DATOS INTRODUCIDOS */
     private String validarDatos() {
-        // Obtener los valores de los campos
+        String errores = "";
+
+        // Validar nombre del equipo
+        if (textFieldNombre.getText().isEmpty()) {
+            errores += bundle.getString("errorTexto") + " " + bundle.getString("labelNombre") + "\n";
+        }
+
+        // Validar iniciales del equipo
+        if (textFieldIniciales.getText().isEmpty()) {
+            errores += bundle.getString("errorTexto") + " " + bundle.getString("labelIniciales") + "\n";
+        }
+
+        // Validar si el equipo ya existe en la base de datos
         String nombreEquipo = textFieldNombre.getText().trim();
-        String inicialesEquipo = textFieldIniciales.getText().trim();
-
-        // Validar que el nombre no esté vacío
-        if (nombreEquipo.isEmpty()) {
-            return bundle.getString("errorTexto") + " " + bundle.getString("labelNombre");
-        }
-
-        // Verificar que las iniciales no estén vacías
-        if (inicialesEquipo.isEmpty()) {
-            return bundle.getString("errorTexto") + " " + bundle.getString("labelIniciales");
-        }
-
-        // Validar si el equipo ya existe
         boolean existeEquipo = new EquipoDao().existeEquipo(nombreEquipo);
         if (existeEquipo && !guardando) {
-            return bundle.getString("agregarEquipoIncorrecto");
+            errores += bundle.getString("agregarEquipoIncorrecto") + "\n";
         }
 
-        return null; // Si no hay errores, devolver null
+        return errores;
     }
+
     /** GENERAR VENTANA DE ALERTA */
     private void generarVentana(AlertType tipoDeAlerta, String mensaje, String title) {
         Alert alerta = new Alert(tipoDeAlerta);

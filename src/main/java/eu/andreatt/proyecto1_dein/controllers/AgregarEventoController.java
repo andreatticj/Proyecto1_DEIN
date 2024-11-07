@@ -91,6 +91,8 @@ public class AgregarEventoController implements Initializable {
     /** EVENTO - AL PULSAR GUARDAR */
     @FXML
     void actionGuardar(ActionEvent event) {
+        String errores = validarDatos();
+        if (!errores.isEmpty()){
         if (guardando) {
             int id_evento = new EventoDao().dameIdDeEvento(this.evento.getNombre());
             boolean actualizado = new EventoDao().actualizarEvento(
@@ -128,10 +130,21 @@ public class AgregarEventoController implements Initializable {
                 generarVentana(AlertType.ERROR, bundle.getString("errorInsertarEvento"), "ERROR");
             }
         }
+        }else {
+            generarVentana(AlertType.ERROR, validarDatos(), "ERROR");
+        }
 
-        // Cerrar ventana modal
-        Stage stage = (Stage) botonCancelar.getScene().getWindow();
-        stage.close();
+    }
+
+    /** VALIDAR DATOS INTRODUCIDOS */
+    private String validarDatos() {
+        String errores = "";
+
+        //Validar temporada
+        if(comboNombres.getText().isEmpty()) {
+            errores+=bundle.getString("errorTexto")+" "+bundle.getString("labelNombre")+"\n";
+        }
+        return errores;
     }
 
 
